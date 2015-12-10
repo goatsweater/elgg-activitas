@@ -81,6 +81,9 @@ function activitas_page_handler($page)
   		break;
   }
 
+  // Set the context
+  elgg_set_context('activitas');
+
   $activity = elgg_list_river($options);
   if (!$activity) {
   	$activity = elgg_echo('river:none');

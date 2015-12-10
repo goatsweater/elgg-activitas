@@ -73,7 +73,7 @@ $ingroups_label=elgg_echo('river:ingroups:label');
 $ingroup_pattern=$ingroups_label.'|'.$ingroup_label.' ';
 
 $html .= "<ul class=\"$list_class\">";
-if (elgg_get_context() != 'admin') {
+if (elgg_get_context() == 'activitas') {
 	$previous_item_time_created = 0;
 	$premier=true;
 	foreach ($items as $item) {
