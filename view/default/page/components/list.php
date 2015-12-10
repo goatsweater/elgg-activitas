@@ -22,7 +22,7 @@ $offset = elgg_extract('offset', $vars);
 $limit = elgg_extract('limit', $vars);
 $count = elgg_extract('count', $vars);
 $base_url = elgg_extract('base_url', $vars, '');
-$GLOBALS['GC_THEME']->debug("IN LIST BASE_URL=$base_url");
+//$GLOBALS['GC_THEME']->debug("IN LIST BASE_URL=$base_url");
 $pagination = elgg_extract('pagination', $vars, true);
 $offset_key = elgg_extract('offset_key', $vars, 'offset');
 $position = elgg_extract('position', $vars, 'after');
@@ -32,7 +32,7 @@ $already_viewed_string = elgg_extract('already_viewed', $vars, '');
 if ($already_viewed_string) {
 	$already_viewed = explode(',',$already_viewed_string);
 	foreach ($already_viewed as $viewed_guid) {
-		$GLOBALS['GC_THEME']->debug("IN LIST ALREADY_VIEWED GUID=$viewed_guid");
+		//$GLOBALS['GC_THEME']->debug("IN LIST ALREADY_VIEWED GUID=$viewed_guid");
 		$test[$viewed_guid] = 1;
 	}
 }
@@ -77,9 +77,9 @@ if (elgg_get_context() != 'admin') {
 	$previous_item_time_created = 0;
 	$premier=true;
 	foreach ($items as $item) {
-		$GLOBALS['GC_THEME']->debug("IN LIST ITEM=".var_export($item,true));
-		$GLOBALS['GC_THEME']->debug("IN LIST TEST=".var_export($test,true));
-		$GLOBALS['GC_THEME']->debug("IN LIST VERIF OGUID=".$item->object_guid." TGUID=".$item->target_guid." TEST_OGUID=".$test[$item->object_guid]." TEST_TGUID=".$test[$item->target_guid]);
+		//$GLOBALS['GC_THEME']->debug("IN LIST ITEM=".var_export($item,true));
+		//$GLOBALS['GC_THEME']->debug("IN LIST TEST=".var_export($test,true));
+		//$GLOBALS['GC_THEME']->debug("IN LIST VERIF OGUID=".$item->object_guid." TGUID=".$item->target_guid." TEST_OGUID=".$test[$item->object_guid]." TEST_TGUID=".$test[$item->target_guid]);
 		//if ($test[$item->object_guid]){
 			//continue;
 		//}
@@ -112,12 +112,12 @@ if (elgg_get_context() != 'admin') {
 						$item_class="updated-annotation";
 					}
 				} else {
-					$GLOBALS['GC_THEME']->debug("IN LIST ITEM SKIPPED COMMENT");
+					//$GLOBALS['GC_THEME']->debug("IN LIST ITEM SKIPPED COMMENT");
 					continue;
 				}
 			} else {
 				if ($test[$item->object_guid]){
-					$GLOBALS['GC_THEME']->debug("IN LIST ITEM SKIPPED ITEM");
+					//$GLOBALS['GC_THEME']->debug("IN LIST ITEM SKIPPED ITEM");
 					continue;
 				}
 			}
@@ -132,7 +132,7 @@ if (elgg_get_context() != 'admin') {
 			}
 		}
 		$li = elgg_view_list_item($new_item, $vars);
-		$GLOBALS['GC_THEME']->debug("IN LIST NEW_ITEM=".var_export($new_item,true));
+		//$GLOBALS['GC_THEME']->debug("IN LIST NEW_ITEM=".var_export($new_item,true));
 		if ($li) {
 			$item_classes = array($item_class);
 
